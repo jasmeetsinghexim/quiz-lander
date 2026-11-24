@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="mylead-verification" content="a776e5680e7bcf9e218bd880bef297ca" />
-  <title>Quick Consumer Rewards Survey</title>
+  <title>US iOS Reward Eligibility Check</title>
   <style>
     * {
       box-sizing: border-box;
@@ -26,7 +26,7 @@
     .card {
       background: #ffffff;
       width: 100%;
-      max-width: 480px;
+      max-width: 460px;
       border-radius: 16px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
       padding: 28px 24px;
@@ -47,7 +47,7 @@
     }
 
     h1 {
-      font-size: 22px;
+      font-size: 23px;
       line-height: 1.3;
       margin-bottom: 10px;
       color: #111827;
@@ -60,65 +60,18 @@
       line-height: 1.5;
     }
 
-    .progress-bar {
-      width: 100%;
-      height: 8px;
-      background: #e5e7eb;
-      border-radius: 999px;
-      overflow: hidden;
-      margin-bottom: 24px;
-    }
-
-    .progress-fill {
-      height: 100%;
-      width: 33%;
-      background: #10b981;
-      transition: width 0.3s ease;
-    }
-
-    .step {
-      display: none;
-    }
-
-    .step.active {
-      display: block;
-      animation: fadeIn 0.25s ease;
-    }
-
     .question {
       font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
       color: #1f2937;
-    }
-
-    .option-btn {
-      display: block;
-      width: 100%;
-      padding: 14px 16px;
-      margin-bottom: 12px;
-      background: #f9fafb;
-      border: 2px solid #e5e7eb;
-      border-radius: 10px;
-      font-size: 15px;
-      font-weight: 600;
-      color: #1f2937;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-
-    .option-btn:hover,
-    .option-btn:active {
-      background: #ecfdf5;
-      border-color: #10b981;
-      color: #065f46;
     }
 
     .cta-btn {
-      display: inline-block;
+      display: block;
       width: 100%;
       padding: 16px;
-      margin-top: 10px;
+      margin-bottom: 12px;
       background: #10b981;
       color: #ffffff;
       text-decoration: none;
@@ -126,11 +79,25 @@
       font-weight: 700;
       border-radius: 10px;
       box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
-      transition: background 0.2s ease;
+      transition: background 0.15s ease;
     }
 
-    .cta-btn:hover {
+    .cta-btn:hover,
+    .cta-btn:active {
       background: #059669;
+    }
+
+    .secondary-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: #f9fafb;
+      border: 2px solid #e5e7eb;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #374151;
+      text-decoration: none;
     }
 
     .footer-note {
@@ -139,79 +106,27 @@
       color: #9ca3af;
       line-height: 1.4;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(4px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="badge">2026 Consumer Opinion Panel</div>
-    <h1>Answer 3 Quick Questions to Check Reward Eligibility</h1>
-    <p class="subtitle">Takes less than 20 seconds. Select your answers below to see available survey &amp; reward matches.</p>
+    <div class="badge">US iOS Member Check</div>
+    <h1>Check Your $1,000 CashApp Reward Eligibility</h1>
+    <p class="subtitle">Limited spots open today for US iPhone users. Confirm below to check availability.</p>
 
-    <div class="progress-bar">
-      <div class="progress-fill" id="progressFill"></div>
-    </div>
+    <div class="question">Do you currently use an iPhone in the United States?</div>
 
-    <!-- Question 1 -->
-    <div class="step active" id="step1">
-      <div class="question">1. How often do you shop online?</div>
-      <button type="button" class="option-btn" onclick="nextStep(2, 66)">Multiple times a week</button>
-      <button type="button" class="option-btn" onclick="nextStep(2, 66)">A few times a month</button>
-      <button type="button" class="option-btn" onclick="nextStep(2, 66)">Occasionally</button>
-    </div>
+    <a href="https://n2nt4.bemobtrcks.com/click" class="cta-btn">
+      Yes, Continue to Claim &rarr;
+    </a>
 
-    <!-- Question 2 -->
-    <div class="step" id="step2">
-      <div class="question">2. Which reward type do you prefer most?</div>
-      <button type="button" class="option-btn" onclick="nextStep(3, 100)">PayPal / Direct Cash</button>
-      <button type="button" class="option-btn" onclick="nextStep(3, 100)">Amazon / Retail Gift Cards</button>
-      <button type="button" class="option-btn" onclick="nextStep(3, 100)">Product Samples &amp; Sweepstakes</button>
-    </div>
-
-    <!-- Question 3 -->
-    <div class="step" id="step3">
-      <div class="question">3. Are you 18 years of age or older?</div>
-      <button type="button" class="option-btn" onclick="showResult()">Yes, I am 18 or older</button>
-      <button type="button" class="option-btn" onclick="showResult()">No, under 18</button>
-    </div>
-
-    <!-- Final Result & BeMob Click URL CTA -->
-    <div class="step" id="resultStep">
-      <div class="question" style="color: #059669;">Spot Reserved! You Qualify to Continue</div>
-      <p class="subtitle" style="margin-bottom: 18px;">
-        Based on your answers, you have been matched with an active survey &amp; reward opportunity. Click below to claim your spot before the session expires.
-      </p>
-      <a href="https://n2nt4.bemobtrcks.com/click" class="cta-btn" id="finalCtaBtn">
-        Continue to Claim Reward &rarr;
-      </a>
-    </div>
+    <a href="https://n2nt4.bemobtrcks.com/click" class="secondary-btn">
+      Check Other Available Rewards
+    </a>
 
     <div class="footer-note">
-      Independent consumer survey pre-screening page. Participation is voluntary and subject to partner terms.
+      Independent consumer reward pre-screening page. Participation is voluntary and subject to partner terms.
     </div>
   </div>
-
-  <script>
-    function nextStep(stepNumber, progressPercent) {
-      document.querySelectorAll('.step').forEach(function (el) {
-        el.classList.remove('active');
-      });
-      document.getElementById('step' + stepNumber).classList.add('active');
-      document.getElementById('progressFill').style.width = progressPercent + '%';
-    }
-
-    function showResult() {
-      document.querySelectorAll('.step').forEach(function (el) {
-        el.classList.remove('active');
-      });
-      document.getElementById('resultStep').classList.add('active');
-      document.getElementById('progressFill').style.width = '100%';
-    }
-  </script>
 </body>
 </html>
-
