@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="mylead-verification" content="a776e5680e7bcf9e218bd880bef297ca" />
-  <title>$100 Nike Gift Card / Store Credit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>UK Fitness Plan Assessment</title>
   <style>
     * {
       box-sizing: border-box;
@@ -12,139 +11,180 @@
       padding: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
-
     body {
-      background-color: #f4f5f7;
-      color: #111111;
+      background-color: #f3f6f9;
+      color: #1a202c;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       min-height: 100vh;
-      padding: 16px;
+      padding: 14px;
     }
-
     .card {
       background: #ffffff;
       width: 100%;
-      max-width: 420px;
-      border-radius: 16px;
-      padding: 28px 22px;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
-      text-align: center;
+      max-width: 440px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      padding: 20px 18px;
+      border-top: 5px solid #16a34a;
     }
-
     .badge {
       display: inline-block;
-      background: #111111;
-      color: #ffffff;
+      background: #dcfce7;
+      color: #15803d;
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-      padding: 6px 12px;
+      padding: 4px 10px;
       border-radius: 999px;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
     }
-
-    .amount {
-      font-size: 40px;
+    h1 {
+      font-size: 21px;
+      line-height: 1.28;
       font-weight: 800;
-      color: #111111;
-      line-height: 1.1;
+      color: #111827;
       margin-bottom: 8px;
     }
-
-    h1 {
-      font-size: 20px;
-      font-weight: 700;
-      color: #222222;
-      margin-bottom: 12px;
-    }
-
     .subtext {
       font-size: 14px;
-      color: #555555;
-      line-height: 1.5;
-      margin-bottom: 22px;
+      color: #4b5563;
+      line-height: 1.4;
+      margin-bottom: 16px;
     }
-
-    .question-box {
-      background: #f8f9fa;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 16px;
-      margin-bottom: 20px;
+    .progress-wrap {
+      background: #e5e7eb;
+      height: 7px;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 18px;
     }
-
-    .question-box p {
-      font-size: 15px;
-      font-weight: 600;
-      color: #111111;
+    .progress-bar {
+      background: #16a34a;
+      height: 100%;
+      width: 33%;
+      transition: width 0.25s ease;
+    }
+    .step {
+      display: none;
+    }
+    .step.active {
+      display: block;
+    }
+    .step-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 6px;
+    }
+    .question {
+      font-size: 17px;
+      font-weight: 700;
+      color: #111827;
       margin-bottom: 14px;
+      line-height: 1.35;
     }
-
-    .cta-btn {
+    .btn-option {
       display: block;
       width: 100%;
-      background-color: #111111;
-      color: #ffffff;
-      text-decoration: none;
+      background: #f8fafc;
+      border: 2px solid #cbd5e1;
+      color: #0f172a;
       font-size: 16px;
       font-weight: 700;
-      padding: 15px 20px;
+      padding: 14px 16px;
       border-radius: 10px;
-      transition: background-color 0.2s ease, transform 0.1s ease;
+      margin-bottom: 10px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s ease;
     }
-
-    .cta-btn:hover {
-      background-color: #2b2b2b;
+    .btn-option:active, .btn-option:hover {
+      background: #16a34a;
+      border-color: #16a34a;
+      color: #ffffff;
     }
-
-    .cta-btn:active {
-      transform: scale(0.98);
+    .cta-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 14px;
     }
-
-    .secondary-btn {
+    .cta-box h2 {
+      font-size: 18px;
+      color: #15803d;
+      margin-bottom: 6px;
+    }
+    .cta-box p {
+      font-size: 13.5px;
+      color: #374151;
+      line-height: 1.4;
+    }
+    .btn-cta {
       display: block;
       width: 100%;
-      margin-top: 10px;
-      background-color: #ffffff;
-      color: #333333;
-      border: 1px solid #d1d5db;
+      background: #16a34a;
+      color: #ffffff;
       text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      padding: 12px 16px;
+      font-size: 17px;
+      font-weight: 800;
+      padding: 16px;
       border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(22, 163, 74, 0.35);
     }
-
     .footer-note {
-      margin-top: 18px;
+      margin-top: 14px;
       font-size: 11px;
-      color: #888888;
-      line-height: 1.4;
+      color: #9ca3af;
+      text-align: center;
+      line-height: 1.35;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="badge">US Rewards Program</div>
-    <div class="amount">$100</div>
-    <h1>Nike Gift Card &amp; Store Credit</h1>
-    <p class="subtext">
-      Confirm your eligibility below to continue to the $100 Nike reward registration page.
-    </p>
 
-    <div class="question-box">
-      <p>Are you currently located in the United States?</p>
-      <a href="https://n2nt4.bemobtrcks.com/click" class="cta-btn">
-        Yes, Continue to Claim &rarr;
-      </a>
-      <a href="https://n2nt4.bemobtrcks.com/click" class="secondary-btn">
-        Check Availability Now
-      </a>
+  <div class="card">
+    <div class="badge">🇬🇧 UK Android Exclusive • Free Access</div>
+    <h1>Get Your Free Personalized AI Fitness & Workout Plan</h1>
+    <p class="subtext">Answer 3 quick questions below to unlock instant access to adaptive home & gym workouts tailored to your body.</p>
+
+    <div class="progress-wrap">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
 
-    <p class="footer-note">
-      Limited daily spots available for US residents (18+). Valid email or ZIP code required on the next page to participate.
-    </p>
+    <!-- Question 1 -->
+    <div class="step active" id="step1">
+      <div class="step-label">Question 1 of 3</div>
+      <div class="question">Are you currently based in the UK and using an Android device?</div>
+      <button class="btn-option" onclick="nextStep(2, 66)">Yes, I am in the UK</button>
+      <button class="btn-option" onclick="nextStep(2, 66)">Yes (Mobile Data / Wi-Fi)</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="step" id="step2">
+      <div class="step-label">Question 2 of 3</div>
+      <div class="question">What is your #1 fitness goal right now?</div>
+      <button class="btn-option" onclick="nextStep(3, 100)">Lose Weight & Burn Fat</button>
+      <button class="btn-option" onclick="nextStep(3, 100)">Build Lean Muscle & Strength</button>
+      <button class="btn-option" onclick="nextStep(3, 100)">Stay Active & Boost Energy</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="step" id="step3">
+      <div class="step-label">Question 3 of 3</div>
+      <div class="question">Where do you prefer to work out?</div>
+      <button class="btn-option" onclick="nextStep(4, 100)">At Home (No Equipment Needed)</button>
+      <button class="btn-option" onclick="nextStep(4, 100)">At the Gym / Outdoors</button>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="step" id="step4">
+      <div class="cta-box">
+        <h2>✅ Your Custom Plan Is Ready!</h2>
+        <p>You qualify for free registration on <strong>Veyr Fitness Intelligence</strong>. Tap below to create your free account and start immediately.</p>
+      </div>
+      <a href="
