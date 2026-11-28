@@ -21,6 +21,8 @@
       padding: 14px;
     }
     .card {
+      position: relative;
+      z-index: 1;
       background: #ffffff;
       width: 100%;
       max-width: 440px;
@@ -87,6 +89,9 @@
       line-height: 1.35;
     }
     .btn-option {
+      position: relative;
+      z-index: 2;
+      pointer-events: auto;
       display: block;
       width: 100%;
       background: #f8fafc;
@@ -99,12 +104,14 @@
       margin-bottom: 10px;
       cursor: pointer;
       text-align: center;
-      transition: all 0.15s ease;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
     }
-    .btn-option:active, .btn-option:hover {
+    .btn-option:hover,
+    .btn-option:focus-visible {
       background: #16a34a;
       border-color: #16a34a;
       color: #ffffff;
+      outline: none;
     }
     .cta-box {
       background: #f0fdf4;
@@ -148,9 +155,9 @@
 <body>
 
   <div class="card">
-    <div class="badge">🇬🇧 UK Android Exclusive • Free Access</div>
-    <h1>Get Your Free Personalized AI Fitness & Workout Plan</h1>
-    <p class="subtext">Answer 3 quick questions below to unlock instant access to adaptive home & gym workouts tailored to your body.</p>
+    <div class="badge">UK Android Exclusive &bull; Free Access</div>
+    <h1>Get Your Free Personalized AI Fitness &amp; Workout Plan</h1>
+    <p class="subtext">Answer 3 quick questions below to unlock instant access to adaptive home &amp; gym workouts tailored to your body.</p>
 
     <div class="progress-wrap">
       <div class="progress-bar" id="progressBar"></div>
@@ -160,31 +167,66 @@
     <div class="step active" id="step1">
       <div class="step-label">Question 1 of 3</div>
       <div class="question">Are you currently based in the UK and using an Android device?</div>
-      <button class="btn-option" onclick="nextStep(2, 66)">Yes, I am in the UK</button>
-      <button class="btn-option" onclick="nextStep(2, 66)">Yes (Mobile Data / Wi-Fi)</button>
+      <button type="button" class="btn-option" data-next="2" data-progress="66">Yes, I am in the UK</button>
+      <button type="button" class="btn-option" data-next="2" data-progress="66">Yes (Mobile Data / Wi-Fi)</button>
     </div>
 
     <!-- Question 2 -->
     <div class="step" id="step2">
       <div class="step-label">Question 2 of 3</div>
       <div class="question">What is your #1 fitness goal right now?</div>
-      <button class="btn-option" onclick="nextStep(3, 100)">Lose Weight & Burn Fat</button>
-      <button class="btn-option" onclick="nextStep(3, 100)">Build Lean Muscle & Strength</button>
-      <button class="btn-option" onclick="nextStep(3, 100)">Stay Active & Boost Energy</button>
+      <button type="button" class="btn-option" data-next="3" data-progress="100">Lose Weight &amp; Burn Fat</button>
+      <button type="button" class="btn-option" data-next="3" data-progress="100">Build Lean Muscle &amp; Strength</button>
+      <button type="button" class="btn-option" data-next="3" data-progress="100">Stay Active &amp; Boost Energy</button>
     </div>
 
     <!-- Question 3 -->
     <div class="step" id="step3">
       <div class="step-label">Question 3 of 3</div>
       <div class="question">Where do you prefer to work out?</div>
-      <button class="btn-option" onclick="nextStep(4, 100)">At Home (No Equipment Needed)</button>
-      <button class="btn-option" onclick="nextStep(4, 100)">At the Gym / Outdoors</button>
+      <button type="button" class="btn-option" data-next="4" data-progress="100">At Home (No Equipment Needed)</button>
+      <button type="button" class="btn-option" data-next="4" data-progress="100">At the Gym / Outdoors</button>
     </div>
 
     <!-- Final CTA -->
     <div class="step" id="step4">
       <div class="cta-box">
-        <h2>✅ Your Custom Plan Is Ready!</h2>
+        <h2>Your Custom Plan Is Ready!</h2>
         <p>You qualify for free registration on <strong>Veyr Fitness Intelligence</strong>. Tap below to create your free account and start immediately.</p>
       </div>
-      <a href="
+      <a href="https://n2nt4.bemobtrcks.com/click" class="btn-cta">Register Free &amp; Access Plan &rarr;</a>
+    </div>
+
+    <div class="footer-note">
+      100% Free Registration &bull; Takes less than 30 seconds on mobile.
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var buttons = document.querySelectorAll(".btn-option");
+      var progressBar = document.getElementById("progressBar");
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var nextStepId = "step" + btn.getAttribute("data-next");
+          var progressVal = btn.getAttribute("data-progress");
+
+          document.querySelectorAll(".step").forEach(function (stepEl) {
+            stepEl.classList.remove("active");
+          });
+
+          var targetStep = document.getElementById(nextStepId);
+          if (targetStep) {
+            targetStep.classList.add("active");
+          }
+          if (progressBar && progressVal) {
+            progressBar.style.width = progressVal + "%";
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
